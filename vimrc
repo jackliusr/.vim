@@ -53,6 +53,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
 Plugin 'kien/ctrlp.vim'
 Plugin 'michaeljsmith/vim-indent-object'
+Plugin 'yegappan/mru'
+
 "zencoding
 Plugin 'mattn/emmet-vim'
 Plugin 'bling/vim-airline'
@@ -60,9 +62,11 @@ Plugin 'vim-scripts/taglist.vim'
 
 " lisp liked languages
 Plugin 'vim-scripts/paredit.vim'
+Plugin 'kien/rainbow_parentheses.vim'
 " Clojure
 Plugin 'guns/vim-clojure-static'
 Plugin 'tpope/vim-fireplace'
+Plugin 'tpope/vim-classpath'
 
 
 
@@ -116,6 +120,8 @@ set t_vb=
 set tm=500
 
 set foldcolumn=1
+set number
+set relativenumber
 
 "'''''''''''''''''''''''''''''''''''''''''''''''''
 " => Colors and Fonts
@@ -208,6 +214,18 @@ set laststatus=2
 
 " Format the status line
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" rainbow parenthese
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Enable rainbow parentheses for all buffers
+augroup rainbow_parentheses
+    au!
+    au VimEnter * RainbowParenthesesToggle
+    au Syntax * RainbowParenthesesLoadRound
+    au Syntax * RainbowParenthesesLoadSquare
+    au Syntax * RainbowParenthesesLoadBraces
+augroup end
 """"""""""""""""""""""""""""
 " => Helper functions
 """"""""""""""""""""""""""""
