@@ -74,7 +74,7 @@ Plugin 'guns/vim-clojure-static'
 Plugin 'tpope/vim-fireplace'
 Plugin 'tpope/vim-classpath'
 
-
+Plugin 'elzr/vim-json'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
