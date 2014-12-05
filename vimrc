@@ -78,11 +78,21 @@ Plugin 'tpope/vim-classpath'
 
 Plugin 'elzr/vim-json'
 
+Plugin 'tomtom/tcomment_vim'
+
+Plugin 'docunext/closetag.vim'
+
+Plugin 'Raimondi/delimitMate'
+
+Plugin 'scrooloose/syntastic'
+
+Plugin 'majutsushi/tagbar'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
-"filetype plugin on
+filetype plugin on
 "
 " Brief help
 " :PluginList          - list configured plugins
