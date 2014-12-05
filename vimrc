@@ -88,8 +88,23 @@ Plugin 'scrooloose/syntastic'
 
 Plugin 'majutsushi/tagbar'
 
+" Snippet engine
+Plugin 'SirVer/ultisnips'
+
+" Snippets are separated from the engine. Add this if you want them:
+Plugin 'honza/vim-snippets'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
+
+""" plugin configuration settings
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+""" if you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 filetype plugin on
@@ -244,6 +259,14 @@ augroup rainbow_parentheses
     au Syntax * RainbowParenthesesLoadSquare
     au Syntax * RainbowParenthesesLoadBraces
 augroup end
+
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd FileType c set omnifunc=ccomplete#Complete
 """"""""""""""""""""""""""""
 " => Helper functions
 """"""""""""""""""""""""""""
