@@ -88,6 +88,7 @@ Plugin 'scrooloose/syntastic'
 
 Plugin 'majutsushi/tagbar'
 
+Plugin 'marijnh/tern_for_vim'
 " Snippet engine
 Plugin 'SirVer/ultisnips'
 
