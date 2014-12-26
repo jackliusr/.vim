@@ -154,8 +154,9 @@ set t_vb=
 set tm=500
 
 set foldcolumn=1
-set number
 set relativenumber
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber 
 
 "'''''''''''''''''''''''''''''''''''''''''''''''''
 " => Colors and Fonts
