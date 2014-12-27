@@ -1,5 +1,5 @@
 " Sections:
-"    -> Vundle
+"    -> Neobundle
 "    -> General
 "    -> VIM user interface
 "    -> Colors and Fonts
@@ -25,80 +25,90 @@ filetype off                  " required
 
 set history=10000
 
-" set the runtime path to include Vundle and initialize
-if has("win32")
-	set rtp+=~/vimfiles/bundle/Vundle.vim/
-	let path='~/vimfiles/bundle'
-	call vundle#begin(path)
-else
-	set rtp+=~/.vim/bundle/Vundle.vim
-	call vundle#begin()
-endif
-" alternatively, pass a path where Vundle should install plugins
+" set the runtime path to include neobundle and initialize
+" Required:
+set runtimepath+=~/.vim/bundle/neobundle.vim/
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+" alternatively, pass a path where Vundle should install NeoBundles
 "call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+" Let NeoBundle manage NeoBundle
+" Required:
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+
+NeoBundle 'Shougo/vimproc.vim', {
+\ 'build' : {
+\     'windows' : 'tools\\update-dll-mingw',
+\     'cygwin' : 'make -f make_cygwin.mak',
+\     'mac' : 'make -f make_mac.mak',
+\     'linux' : 'make',
+\     'unix' : 'gmake',
+\    },
+\ }
 
 " The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-Plugin 'L9'
-" Git plugin not hosted on GitHub
-Plugin 'git://git.wincent.com/command-t.git'
+" Keep NeoBundle commands between vundle#begin/end.
+" NeoBundle on GitHub repo
+NeoBundle 'tpope/vim-fugitive'
+" NeoBundle from http://vim-scripts.org/vim/scripts.html
+NeoBundle 'L9'
+" Git NeoBundle not hosted on GitHub
+NeoBundle 'git://git.wincent.com/command-t.git'
 
-" git repos on your local machine (i.e. when working on your own plugin)
-" Plugin 'file:///home/gmarik/path/to/plugin'
+" git repos on your local machine (i.e. when working on your own NeoBundle)
+" NeoBundle 'file:///home/gmarik/path/to/NeoBundle'
 
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Avoid a name conflict with L9
 "
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-surround'
-Plugin 'kien/ctrlp.vim'
-Plugin 'michaeljsmith/vim-indent-object'
-Plugin 'yegappan/mru'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'michaeljsmith/vim-indent-object'
+NeoBundle 'yegappan/mru'
+
+NeoBundle 'Shougo/unite.vim'
 
 "zencoding
-Plugin 'mattn/emmet-vim'
-Plugin 'bling/vim-airline'
-Plugin 'vim-scripts/taglist.vim'
+NeoBundle 'mattn/emmet-vim'
+NeoBundle 'bling/vim-airline'
+NeoBundle 'vim-scripts/taglist.vim'
 
 " lisp liked languages
-Plugin 'vim-scripts/paredit.vim'
-Plugin 'kien/rainbow_parentheses.vim'
+NeoBundle 'vim-scripts/paredit.vim'
+NeoBundle 'kien/rainbow_parentheses.vim'
 " Clojure
-Plugin 'guns/vim-clojure-static'
-Plugin 'tpope/vim-fireplace'
-Plugin 'tpope/vim-classpath'
+NeoBundle 'guns/vim-clojure-static'
+NeoBundle 'tpope/vim-fireplace'
+NeoBundle 'tpope/vim-classpath'
 
-Plugin 'elzr/vim-json'
+NeoBundle 'elzr/vim-json'
 
-Plugin 'tomtom/tcomment_vim'
+NeoBundle 'tomtom/tcomment_vim'
 
-Plugin 'docunext/closetag.vim'
+NeoBundle 'docunext/closetag.vim'
 
-Plugin 'Raimondi/delimitMate'
+NeoBundle 'Raimondi/delimitMate'
 
-Plugin 'scrooloose/syntastic'
+NeoBundle 'scrooloose/syntastic'
 
-Plugin 'majutsushi/tagbar'
+NeoBundle 'majutsushi/tagbar'
 
-Plugin 'marijnh/tern_for_vim'
+NeoBundle 'marijnh/tern_for_vim'
 " Snippet engine
-Plugin 'SirVer/ultisnips'
+NeoBundle 'SirVer/ultisnips'
 
 " Snippets are separated from the engine. Add this if you want them:
-Plugin 'honza/vim-snippets'
+NeoBundle 'honza/vim-snippets'
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
+" All of your NeoBundles must be added before the following line
+call neobundle#end()            " required
 
-""" plugin configuration settings
+""" NeoBundle configuration settings
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
@@ -107,17 +117,17 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
+" To ignore NeoBundle indent changes, instead use:
 filetype plugin on
 "
 " Brief help
-" :PluginList          - list configured plugins
-" :PluginInstall(!)    - install (update) plugins
-" :PluginSearch(!) foo - search (or refresh cache first) for foo
-" :PluginClean(!)      - confirm (or auto-approve) removal of unused plugins
+" :NeoBundleList          - list configured NeoBundles
+" :NeoBundleInstall(!)    - install (update) NeoBundles
+" :NeoBundleSearch(!) foo - search (or refresh cache first) for foo
+" :NeoBundleClean(!)      - confirm (or auto-approve) removal of unused NeoBundles
 "
 " see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+" Put your non-NeoBundle stuff after this line
 "
 "'''''''''''''''''''''''''''''
 " => Vim Interface
@@ -306,3 +316,7 @@ function! HasPaste()
     endif
     return ''
 endfunction
+
+ " If there are uninstalled bundles found on startup,
+ " this will conveniently prompt you to install them.
+ NeoBundleCheck
