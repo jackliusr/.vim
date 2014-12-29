@@ -76,7 +76,6 @@ NeoBundle 'Shougo/unite.vim'
 "zencoding
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'bling/vim-airline'
-NeoBundle 'vim-scripts/taglist.vim'
 
 " lisp liked languages
 NeoBundle 'vim-scripts/paredit.vim'
@@ -97,6 +96,12 @@ NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'scrooloose/syntastic'
 
 NeoBundle 'majutsushi/tagbar'
+
+NeoBundle 'Valloric/YouCompleteMe', {
+        \ 'build' : {
+        \  'mac' : './install.sh',
+        \    }
+        \ }
 
 NeoBundle 'marijnh/tern_for_vim'
 " Snippet engine
