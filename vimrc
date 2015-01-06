@@ -99,6 +99,7 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'majutsushi/tagbar'
 
 NeoBundle 'marijnh/tern_for_vim'
+NeoBundle 'kchmck/vim-coffee-script'
 " Snippet engine
 NeoBundle 'SirVer/ultisnips'
 
