@@ -99,7 +99,10 @@ NeoBundle 'majutsushi/tagbar'
 
 NeoBundle 'Valloric/YouCompleteMe', {
         \ 'build' : {
-        \  'mac' : './install.sh',
+     \     'mac' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
+     \     'unix' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
+     \     'windows' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
+     \     'cygwin' : './install.sh --clang-completer --system-libclang --omnisharp-completer'
         \    }
         \ }
 
@@ -233,6 +236,7 @@ set wrap "Wrap lines
 " Visual mode pressing * or # searches for the current selection
 vnoremap <silent> * :call VisualSelect('f','')<CR>
 vnoremap <silent> # :call VisualSelect('b','')<CR>
+vnoremap <silent> . :norm.<CR>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""
