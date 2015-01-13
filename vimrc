@@ -86,6 +86,7 @@ NeoBundle 'tpope/vim-fireplace'
 NeoBundle 'tpope/vim-classpath'
 
 NeoBundle 'elzr/vim-json'
+NeoBundle 'tpope/vim-rails'
 
 NeoBundle 'tomtom/tcomment_vim'
 
