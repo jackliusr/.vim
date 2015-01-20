@@ -111,6 +111,10 @@ NeoBundle 'kchmck/vim-coffee-script'
 " Snippet engine
 NeoBundle 'SirVer/ultisnips'
 
+NeoBundle 'sjl/gundo.vim'
+
+NeoBundle 'plasticboy/vim-markdown'
+
 " Snippets are separated from the engine. Add this if you want them:
 NeoBundle 'honza/vim-snippets'
 
