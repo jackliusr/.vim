@@ -24,6 +24,18 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 set history=10000
+let g:ycm_server_use_vim_stdout = 1
+let g:ycm_server_log_level = 'debug'
+let g:ycm_path_to_python_interpreter = '/usr/bin/python'
+let $PATH = '-DPYTHON_INCLUDE_DIR=/usr/lib/python2.7'.$PATH
+""" NeoBundle configuration settings
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+""" if you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
 
 " set the runtime path to include neobundle and initialize
 " Required:
@@ -65,6 +77,15 @@ NeoBundle 'git://git.wincent.com/command-t.git'
 NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Avoid a name conflict with L9
 "
+NeoBundle 'tpope/vim-repeat'
+NeoBundle 'tpope/vim-abolish'
+NeoBundle 'tpope/vim-unimpaired'
+NeoBundle 'tpope/vim-bundler'
+
+" Text objects for the last searched pattern
+NeoBundle 'kana/vim-textobj-lastpat'
+
+
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'kien/ctrlp.vim'
@@ -87,6 +108,10 @@ NeoBundle 'tpope/vim-classpath'
 
 NeoBundle 'elzr/vim-json'
 
+"ruby & rails
+NeoBundle 'vim-ruby/vim-ruby'
+NeoBundle 'tpope/vim-rails'
+
 NeoBundle 'tomtom/tcomment_vim'
 
 NeoBundle 'docunext/closetag.vim'
@@ -96,6 +121,8 @@ NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'scrooloose/syntastic'
 
 NeoBundle 'majutsushi/tagbar'
+
+NeoBundle 'sjl/gundo.vim'
 
 NeoBundle 'Valloric/YouCompleteMe', {
         \ 'build' : {
@@ -118,16 +145,14 @@ NeoBundle 'plasticboy/vim-markdown'
 " Snippets are separated from the engine. Add this if you want them:
 NeoBundle 'honza/vim-snippets'
 
+NeoBundle 'nelstrom/vim-qargs'
+NeoBundle 'nelstrom/vim-visual-star-search'
+
+NeoBundle 'mozilla/doctorjs'
+
 " All of your NeoBundles must be added before the following line
 call neobundle#end()            " required
 
-""" NeoBundle configuration settings
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-""" if you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
 
 filetype plugin indent on    " required
 " To ignore NeoBundle indent changes, instead use:
@@ -186,7 +211,7 @@ autocmd InsertLeave * :set relativenumber
 "'''''''''''''''''''''''''''''''''''''''''''''''''
 syntax enable
 try
-	colorschem desert
+	colorschem mustang
 catch
 endtry
 
