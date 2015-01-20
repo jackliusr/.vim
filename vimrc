@@ -83,6 +83,7 @@ NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'tpope/vim-bundler'
 
 " Text objects for the last searched pattern
+NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'kana/vim-textobj-lastpat'
 
 
