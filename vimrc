@@ -149,7 +149,6 @@ NeoBundle 'honza/vim-snippets'
 NeoBundle 'nelstrom/vim-qargs'
 NeoBundle 'nelstrom/vim-visual-star-search'
 
-NeoBundle 'mozilla/doctorjs'
 
 " All of your NeoBundles must be added before the following line
 call neobundle#end()            " required
