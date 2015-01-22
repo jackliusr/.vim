@@ -29,7 +29,7 @@ let g:ycm_server_log_level = 'debug'
 let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 let $PATH = '-DPYTHON_INCLUDE_DIR=/usr/lib/python2.7'.$PATH
 """ NeoBundle configuration settings
-let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
