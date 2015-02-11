@@ -36,6 +36,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 """ if you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
+runtime macros/matchit.vim
 
 " set the runtime path to include neobundle and initialize
 " Required:
@@ -59,6 +60,8 @@ NeoBundle 'Shougo/vimproc.vim', {
 \     'unix' : 'gmake',
 \    },
 \ }
+
+NeoBundle 'Shougo/vimshell.vim'
 
 " The following are examples of different formats supported.
 " Keep NeoBundle commands between vundle#begin/end.
@@ -117,7 +120,7 @@ NeoBundle 'tomtom/tcomment_vim'
 
 NeoBundle 'docunext/closetag.vim'
 
-NeoBundle 'Raimondi/delimitMate'
+NeoBundle 'jiangmiao/auto-pairs'
 
 NeoBundle 'scrooloose/syntastic'
 
