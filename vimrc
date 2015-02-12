@@ -128,14 +128,16 @@ NeoBundle 'majutsushi/tagbar'
 
 NeoBundle 'sjl/gundo.vim'
 
-NeoBundle 'Valloric/YouCompleteMe', {
-        \ 'build' : {
-     \     'mac' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
-     \     'unix' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
-     \     'windows' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
-     \     'cygwin' : './install.sh --clang-completer --system-libclang --omnisharp-completer'
-        \    }
-        \ }
+if ! ( has("win32") || has('win64') || ( has('unix') &&  ( has('win32unix') || has('win64unix') )  )) 
+    NeoBundle 'Valloric/YouCompleteMe', {
+            \ 'build' : {
+         \     'mac' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
+         \     'unix' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
+         \     'windows' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
+         \     'cygwin' : './install.sh --clang-completer --system-libclang --omnisharp-completer'
+            \    }
+            \ }
+endif
 
 NeoBundle 'marijnh/tern_for_vim'
 NeoBundle 'kchmck/vim-coffee-script'
