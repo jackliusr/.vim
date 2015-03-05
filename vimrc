@@ -110,6 +110,9 @@ NeoBundle 'guns/vim-clojure-static'
 NeoBundle 'tpope/vim-fireplace'
 NeoBundle 'tpope/vim-classpath'
 
+"Go
+NeoBundle 'fatih/vim-go'
+
 NeoBundle 'elzr/vim-json'
 
 "ruby & rails
