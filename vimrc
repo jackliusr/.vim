@@ -109,6 +109,7 @@ NeoBundle 'kien/rainbow_parentheses.vim'
 NeoBundle 'guns/vim-clojure-static'
 NeoBundle 'tpope/vim-fireplace'
 NeoBundle 'tpope/vim-classpath'
+NeoBundle 'guns/vim-clojure-highlight'
 
 "Go
 NeoBundle 'fatih/vim-go'
@@ -131,16 +132,6 @@ NeoBundle 'majutsushi/tagbar'
 
 NeoBundle 'sjl/gundo.vim'
 
-if ! ( has("win32") || has('win64') || ( has('unix') &&  ( has('win32unix') || has('win64unix') )  )) 
-    NeoBundle 'Valloric/YouCompleteMe', {
-            \ 'build' : {
-         \     'mac' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
-         \     'unix' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
-         \     'windows' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
-         \     'cygwin' : './install.sh --clang-completer --system-libclang --omnisharp-completer'
-            \    }
-            \ }
-endif
 
 NeoBundle 'marijnh/tern_for_vim'
 NeoBundle 'kchmck/vim-coffee-script'
@@ -326,6 +317,10 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
+" Evaluate Clojure buffers on load
+autocmd BufRead *.clj try | silent! Require | catch /^Fireplace/ | endtry
+" autocmd Syntax  clojure EnableSyntaxExtension
+
 """"""""""""""""""""""""""""
 " => Helper functions
 """"""""""""""""""""""""""""
